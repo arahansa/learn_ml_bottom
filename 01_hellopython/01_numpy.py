@@ -17,6 +17,15 @@ print("더하기", x+y)
 
 print("곱하기", x * y)
 
+# N차원 배열
+
+A = np.array([[1,2], [3,4]])
+print("array", A)
+
+print("shape", A.shape)
+
+print("dtype:", A.dtype)
+
 
 
 
