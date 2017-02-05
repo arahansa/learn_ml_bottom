@@ -1,0 +1,14 @@
+import numpy as np
+
+y = [0.1, 0.05, 0.6, 0.0, 0.05, 0.1, 0.0, 0.1, 0.0, 0.0]
+t = [0, 0, 1, 0, 0, 0, 0, 0, 0, 0]
+
+def mean_squared_error(y,t):
+    return 0.5 * np.sum((y-t)**2)
+
+# 2일 확률이 높다고 추정했을 때
+print(mean_squared_error(np.array(y),np.array(t)))
+
+# 예 7일 확률이 높다고 추정했을 때
+y = [ 0.1, 0.05, 0.1, 0.0, 0.05, 0.1, 0.0, 0.6, 0.0, 0.0]
+print(mean_squared_error(np.array(y),np.array(t)))
