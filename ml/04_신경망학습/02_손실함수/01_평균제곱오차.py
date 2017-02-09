@@ -49,6 +49,10 @@ y = [[0.1, 0.05, 0.1, 0.0, 0.05, 0.1, 0.0, 0.6, 0.0, 0.0], [0.1, 0.05, 0.3, 0.3,
 t = [[0, 0, 1, 0, 0, 0, 0, 0, 0, 0], [0,0,1,0,0,0,0,0,0,0]]
 print(cross_entropy_error(np.array(y), np.array(t)))
 
+
+print("----clear----")
+print("y shape", np.array(y).shape[0])
+
 # 정답 레이블이 원핫인코딩이 ㄴ아니라 2, 7 등의 숫자 레이블로 주어졌을 때의 경우
 # def cross_entropy_error(y,t):
 #     if y.dim == 1:
