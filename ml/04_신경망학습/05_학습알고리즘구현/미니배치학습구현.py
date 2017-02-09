@@ -42,6 +42,7 @@ for i in range(iters_num):
 
     # 학습 경과 기록
     loss = network.loss(x_batch, t_batch)
+    print("loss : ", loss)
     train_loss_list.append(loss)
 
     # 1에폭당 정확도 계산

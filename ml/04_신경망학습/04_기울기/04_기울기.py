@@ -16,7 +16,6 @@ def numeric_gradient(f,x):
 
         grad[idx] = (fxh1 - fxh2) / (2*h)
         x[idx] = tmp_val
-
     return grad
 
 def function_2(x):
