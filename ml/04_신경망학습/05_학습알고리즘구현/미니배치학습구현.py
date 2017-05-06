@@ -10,15 +10,17 @@ from two_layer_net import TwoLayerNet
 # 데이터 읽기
 (x_train, t_train), (x_test, t_test) = load_mnist(normalize=True, one_hot_label=True)
 
-network = TwoLayerNet(input_size=784, hidden_size=50, output_size=10)
+network = TwoLayerNet(input_size=784, hidden_size=100, output_size=10)
 
 # 하이퍼파라미터
 iters_num = 10000  # 반복 횟수를 적절히 설정한다.
 train_size = x_train.shape[0]
 print("x train :" , x_train.shape[0], x_train.shape[1])
+print("t train ", t_train.shape)
 print("train size: ", train_size)
-batch_size = 100  # 미니배치 크기
+batch_size = 100   # 미니배치 크기
 learning_rate = 0.1
+
 
 train_loss_list = []
 train_acc_list = []
@@ -26,12 +28,14 @@ test_acc_list = []
 
 # 1에폭당 반복 수
 iter_per_epoch = max(train_size / batch_size, 1)
+print("iter per epoch :", iter_per_epoch)
 
 for i in range(iters_num):
     # 미니배치 획득
     batch_mask = np.random.choice(train_size, batch_size)
     x_batch = x_train[batch_mask]
     t_batch = t_train[batch_mask]
+
     # 기울기 계산
     # grad = network.numerical_gradient(x_batch, t_batch)
     grad = network.gradient(x_batch, t_batch)
@@ -42,7 +46,7 @@ for i in range(iters_num):
 
     # 학습 경과 기록
     loss = network.loss(x_batch, t_batch)
-    print("loss : ", loss)
+    #print("loss : ", loss)
     train_loss_list.append(loss)
 
     # 1에폭당 정확도 계산

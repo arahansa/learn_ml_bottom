@@ -59,3 +59,55 @@ def cross_entropy_error(y, t):
 def softmax_loss(X, t):
     y = softmax(X)
     return cross_entropy_error(y, t)
+
+
+print(softmax(np.array([[1,2],[3,4]])))
+
+t = np.array([[1,2,3],[3,4,5], [5,6, 7]])
+print("t dim :", t.ndim)
+print("exp : ", np.exp(t))
+print("sum : ", np.sum(np.exp(t), axis=0))
+
+print("---")
+t = np.array([[8,8,8], [8,8,8], [8,8,8]])
+a = np.array([1,2,4])
+c = t/a
+print("c:", c)
+print("shape a ", a.shape)
+print("ndim a :", a.ndim)
+
+ttt = np.array([
+    [[1,2],[3,4]],
+    [[1,2],[3,4]]
+])
+print("ttt ndim :", ttt.ndim)
+
+t = np.array([[6,2,3],[3,4,5], [5,6,7]])
+aMax = np.max(t, axis=0)
+print("aMax : ", aMax)
+
+aMax = np.max(np.array([[5,4],[3,8]]), axis=0)
+print("aMax : ", aMax)
+
+
+ac1 = np.array([
+    [1,2,3],
+    [4,5,6],
+    [7,8,9]
+])
+
+ac2 = np.array([
+    [1]
+])
+
+print("ac1 T:", ac1.T)
+
+print("x + y : ", ac1 + ac2)
+
+print("---")
+m = np.array([
+    [1010, 1000, 990]
+])
+print("m ndim : ", m.ndim)
+print("sf : ", softmax(m))
+
